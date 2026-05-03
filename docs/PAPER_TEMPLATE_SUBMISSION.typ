@@ -6,28 +6,68 @@
 #set text(font: "Arial", size: 11pt)
 #set par(justify: false, leading: 0.57em, spacing: 0.42em)
 #set heading(numbering: none)
+#let navy = rgb("#1f4e79")
+#let gold = rgb("#c58a00")
+#let soft = rgb("#eef4fa")
+#let line_gray = rgb("#9aa8b5")
+
 #show heading.where(level: 1): it => {
-  set text(size: 13pt, weight: "bold")
-  it
+  set text(size: 13.5pt, weight: "bold", fill: navy)
+  block(above: 0.18in, below: 0.08in)[
+    #it
+    #v(2pt)
+    #line(length: 100%, stroke: (paint: gold, thickness: 0.8pt))
+  ]
 }
 #show heading.where(level: 2): it => {
-  set text(size: 11pt, weight: "bold")
-  it
+  set text(size: 11pt, weight: "bold", fill: navy)
+  block(above: 0.08in, below: 0.02in)[#it]
 }
 
 #let field(label, value) = [
   #text(weight: "bold")[#label:] #value
 ]
 
-= Participant Information:
+#let info_row(label, value) = [
+  #text(weight: "bold", fill: navy)[#label:] #value
+]
 
-#field("Participant Name", "Cody Mitchell")
+#let table_style = (
+  stroke: (x, y) => if y == 0 { (paint: navy, thickness: 0.8pt) } else { (paint: line_gray, thickness: 0.45pt) },
+  fill: (x, y) => if y == 0 { soft } else { none },
+)
 
-#field("Team Name", "Fractal Research Group / SoilPulse-ET")
+#let callout(body) = box(
+  width: 100%,
+  inset: 8pt,
+  fill: soft,
+  stroke: (paint: navy, thickness: 0.6pt),
+  radius: 3pt,
+)[#body]
 
-#field("NASA Data Set Used", "ECOSTRESS Tiled Evapotranspiration Instantaneous and Daytime L3 Global 70 m V002")
+#align(center)[
+  #text(size: 17pt, weight: "bold", fill: navy)[SoilPulse-ET]
+  #v(2pt)
+  #text(size: 12pt, weight: "bold")[SmallSat Onboard Triage for Regenerative Agriculture Water-Stress Follow-Up]
+  #v(5pt)
+  #line(length: 4.7in, stroke: (paint: gold, thickness: 1pt))
+]
 
-#field("DOI", "10.5067/ECOSTRESS/ECO_L3T_JET.002")
+#v(0.13in)
+
+#box(width: 100%, inset: 9pt, fill: soft, stroke: (paint: navy, thickness: 0.7pt), radius: 3pt)[
+  #text(size: 11.5pt, weight: "bold", fill: navy)[Participant Information]
+  #v(4pt)
+  #info_row("Participant Name", "Cody Mitchell")
+
+  #info_row("Team Name", "Fractal Research Group / SoilPulse-ET")
+
+  #info_row("NASA Data Set Used", "ECOSTRESS Tiled Evapotranspiration Instantaneous and Daytime L3 Global 70 m V002")
+
+  #info_row("DOI", "10.5067/ECOSTRESS/ECO_L3T_JET.002")
+]
+
+#v(0.08in)
 
 = 1. Introduction
 
@@ -63,6 +103,8 @@ The first NASA data anchor is ECOSTRESS L3T JET V002. ECOSTRESS supports evapotr
 
 #table(
   columns: (1.15in, 4.6in),
+  stroke: table_style.stroke,
+  fill: table_style.fill,
   [Constraint], [SoilPulse-ET design response],
   [Downlink], [Do not send every full chip. Select priority chips, send summaries, and defer low-value tiles.],
   [Compute], [Use compact per-tile features and a deterministic policy before downlink.],
@@ -91,6 +133,8 @@ The project builds on NASA evapotranspiration data, operational interest in sate
 
 #table(
   columns: (1.65in, 1.45in, 2.55in),
+  stroke: table_style.stroke,
+  fill: table_style.fill,
   [Variable], [Hybrid demo result], [Interpretation],
   [Downlink], [224 KiB vs. 784 KiB], [560 KiB / 71.43% byte savings versus sending all full chips.],
   [Packet count], [4 selected packets], [Two full chips plus two compact summaries.],
@@ -99,7 +143,7 @@ The project builds on NASA evapotranspiration data, operational interest in sate
   [Energy/processing], [38.10% / 48.00%], [The policy stays within concept planning budgets.],
 )
 
-The 71.43% savings is byte savings, not the percentage of tiles deferred. Four of eight tiles are deferred, but two selected tiles are compact summaries rather than full chips.
+#callout([The 71.43% savings is byte savings, not the percentage of tiles deferred. Four of eight tiles are deferred, but two selected tiles are compact summaries rather than full chips.])
 
 == III. Concrete examples, outperformance scenarios, and limitations.
 
