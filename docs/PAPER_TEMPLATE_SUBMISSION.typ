@@ -21,8 +21,8 @@
 }
 #show heading.where(level: 2): it => {
   set text(size: 10.8pt, weight: "bold", fill: navy)
-  set par(leading: 0.88em)
-  block(above: 0.095in, below: 0.075in)[#it]
+  set par(leading: 0.42em)
+  block(above: 0.095in, below: 0.07in)[#it]
 }
 
 #let field(label, value) = [
