@@ -90,7 +90,7 @@ SoilPulse-ET is a SmallSat onboard triage concept for regenerative agriculture w
 - Technical feasibility: the concept is anchored to a conservative 6U CubeSat planning envelope and explicit downlink, packet, processing-time, and energy budgets.
 - Potential impact: the current hybrid demo uses 224 KiB versus a 784 KiB full-chip baseline, saving 560 KiB / 71.43% while retaining 2/2 high-stress candidates and deferring 1/1 cloudy candidates.
 - Business and market evaluation: the first users are irrigation districts, groundwater agencies, conservation planners, and regenerative agriculture technical-service providers.
-- Presentation and reproducibility: the public artifact repository provides code, fixtures, tests, paper, and documentation aligned around the same NASA data anchor and evidence boundary.
+- Presentation and reproducibility: the public artifact repository provides runnable policy code, demo fixtures, tests, paper files, and source notes tied to ECOSTRESS L3T JET V002.
 
 #pagebreak()
 
@@ -119,12 +119,12 @@ The first NASA data anchor is ECOSTRESS L3T JET V002. ECOSTRESS supports evapotr
   [Compute], [Use compact per-tile features and a deterministic policy before downlink.],
   [Energy], [Track per-tile processing and packet costs under a mission budget.],
   [Storage], [Keep a tile-level ledger and return compact evidence when a summary is sufficient.],
-  [Contact time], [Prioritize packets that create the highest-value analyst worklist.],
+  [Contact time], [Prioritize packets that produce a ranked tile list for analyst follow-up.],
 )
 
 == III. Solution design integration into a current commercial market full-stack implementation system.
 
-The concept fits as an onboard policy layer for Earth-observation operators and as a downstream decision-support feed for agricultural analytics providers. A practical full-stack path is: user priorities on the ground, spacecraft tasking, onboard feature extraction and triage, downlink of selected packets, and a district or conservation-provider worklist for follow-up.
+The concept fits as an onboard decision module for Earth-observation operators and as a downstream input for agricultural analytics providers. A practical implementation path is: user priorities on the ground, spacecraft tasking, onboard feature extraction and triage, downlink of selected packets, and a district or conservation-provider list of tiles for follow-up.
 
 #pagebreak()
 
@@ -132,11 +132,11 @@ The concept fits as an onboard policy layer for Earth-observation operators and 
 
 == A. Benefits and impact of the proposed solution.
 
-The benefit is selective attention. SoilPulse-ET is designed to reduce wasted downlink, avoid returning cloudy or low-confidence observations during scarce contacts, and focus land-resilience analysts on the tiles most likely to need timely follow-up.
+The benefit is fewer low-value packets during a limited contact window. SoilPulse-ET is designed to reduce wasted downlink, avoid returning cloudy or low-confidence observations during scarce contacts, and focus land-resilience analysts on the tiles most likely to need timely follow-up.
 
 == I. How this solution builds upon current research and market capabilities.
 
-The project builds on NASA evapotranspiration data, operational interest in satellite-driven agriculture monitoring, and market examples such as ET-informed water budgets and district-scale analytics. Its contribution is a systems layer that asks how a SmallSat can decide what to sense, summarize, downlink, or defer before data reaches the ground.
+The project builds on NASA evapotranspiration data, operational interest in satellite-driven agriculture monitoring, and market examples such as ET-informed water budgets and district-scale analytics. Its contribution is a repeatable decision rule and resource ledger for choosing what a SmallSat should sense, summarize, downlink, or defer before data reaches the ground.
 
 == II. Effect on technical variables compared to traditional methods.
 
@@ -164,19 +164,19 @@ Example scenario: after a hot and dry week, an irrigation district analyst may n
 
 == A. Qualifications and expertise of team members.
 
-Cody Mitchell is submitting as an independent researcher affiliated with Fractal Research Group / SoilPulse-ET. The Phase 1 contribution is software systems design, reproducible artifact packaging, and evidence-bounded research operations. The documented evidence supports transparent resource-aware triage, public review of the artifact, and a clear path toward formal flight qualification, agronomic validation, and future NASA review.
+Cody Mitchell is submitting as an independent researcher affiliated with Fractal Research Group / SoilPulse-ET. The Phase 1 contribution is software systems design, reproducible artifact packaging, and documentation that names the data rows, assumptions, commands, and metrics behind the result. The documented evidence supports triage under downlink, compute, and energy budgets, public review of the artifact, and a list of validation tasks for formal flight qualification, agronomic validation, and future NASA review.
 
 == B. Past projects or research relevant to the proposed solution.
 
-Fractal Research Group is being used here as the public research umbrella for targeted, auditable research artifacts. SoilPulse-ET applies that operating style to land and water resilience: public code, explicit resource budgets, clear NASA data lineage, and careful claim boundaries.
+Fractal Research Group is used here as the public research umbrella for a small, reviewable artifact. SoilPulse-ET keeps the code, paper, source list, budget table, test fixture, and next-validation plan in one repository so reviewers can see which parts are implemented and which parts are scheduled for follow-up.
 
 == C. Analysis for how the proposed solution can eventually be scaled or integrated into future markets.
 
-The initial product shape is an analytics and tasking layer for Earth-observation operators or agricultural decision-support providers. It can scale from a Phase 1 policy demo to a pilot workflow by adding more real ECOSTRESS windows, real HLS vegetation ingestion, user-calibrated thresholds, and more detailed contact-window models.
+The initial product would be an analytics and tasking module for Earth-observation operators or agricultural decision-support providers. It can scale from the current runnable fixture to a pilot workflow by adding more real ECOSTRESS windows, real HLS vegetation ingestion, user-calibrated thresholds, and more detailed contact-window models.
 
 == I. Potential product users and how target users inform solution design criteria.
 
-Potential users include irrigation district analysts, groundwater sustainability agencies, conservation technical-service providers, regenerative agriculture program managers, and water-risk analytics partners. Their needs drive the design criteria: explainable tile decisions, audit-friendly reason codes, lower analyst burden, cloud and confidence handling, and explicit degraded modes under scarce satellite resources.
+Potential users include irrigation district analysts, groundwater sustainability agencies, conservation technical-service providers, regenerative agriculture program managers, and water-risk analytics partners. Their needs drive the design criteria: tile-level reason codes, fewer low-value items in the follow-up queue, cloud and confidence fields on every decision, and predictable behavior when downlink or compute budgets are tight.
 
 == II. Potential market applications beyond agricultural or forestry purposes.
 
@@ -196,7 +196,7 @@ The base concept is already demonstrated as a reproducible policy fixture. The M
 4. Extend the resource model to raw scene sizes, memory, storage, contact windows, and downlink rates.
 5. Package a reviewer-friendly dashboard or notebook view for tile decisions and resource budgets.
 
-This process addresses the industry gap between abundant Earth-observation data and the operational need for selective, explainable, resource-aware follow-up.
+This process addresses the industry gap between abundant Earth-observation data and the operational need for a ranked, explainable follow-up queue under fixed downlink, compute, and contact-time limits.
 
 == B. Next steps if selected as a Finalist.
 
@@ -206,11 +206,11 @@ If selected, the next phase is validation and mission hardening. SoilPulse-ET wo
 
 == A. Review key points about the proposed adaptive sensing or onboard processing solution.
 
-SoilPulse-ET gives a SmallSat a transparent way to prioritize scarce observation resources. It maintains a tile-level knowledge ledger, scores event priority and evidence quality, and chooses between priority chips, feature summaries, and deferral. The NASA anchor is ECOSTRESS L3T JET V002, DOI `10.5067/ECOSTRESS/ECO_L3T_JET.002`.
+SoilPulse-ET gives a SmallSat a transparent way to choose which candidate tiles to return first. It maintains a tile-level knowledge ledger, scores event priority and evidence quality, and chooses between priority chips, feature summaries, and deferral. The NASA anchor is ECOSTRESS L3T JET V002, DOI `10.5067/ECOSTRESS/ECO_L3T_JET.002`.
 
 == B. Summarize strengths and potential impact.
 
-The strength of SoilPulse-ET is disciplined selectivity. The current hybrid demo shows meaningful downlink savings while preserving high-stress candidates and deferring cloudy evidence. For regenerative agriculture and water-stress follow-up, this can help missions manage scarce satellite resources so land managers can respond faster to scarce water. The current artifact is a concept and policy demonstrator today, with validation and mission hardening defined as the next phase.
+The strength of SoilPulse-ET is that each tile decision has an action, reason code, packet-size estimate, and budget impact. The current hybrid demo shows meaningful downlink savings while preserving high-stress candidates and deferring cloudy evidence. For regenerative agriculture and water-stress follow-up, this can help missions manage limited satellite resources so land managers can respond faster to scarce water. The current artifact is a concept and policy demonstrator today, with validation and mission hardening defined as the next phase.
 
 #pagebreak()
 
