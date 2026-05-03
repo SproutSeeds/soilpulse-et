@@ -82,7 +82,7 @@
 
 == A. Brief overview of the proposed solution and description of your team/organization.
 
-SoilPulse-ET is a SmallSat onboard triage concept for regenerative agriculture water-stress follow-up. The proposed system keeps a tile-level knowledge ledger, scores event priority and evidence quality, then decides whether each candidate land tile should be sent as a priority image chip, compressed into a feature summary, or deferred during a constrained contact. The submission is prepared by Cody Mitchell as an independent researcher affiliated with Fractal Research Group / SoilPulse-ET. The Phase 1 artifact is a concept and policy demonstrator, not flight software and not a validated crop-stress model.
+SoilPulse-ET is a SmallSat onboard triage concept for regenerative agriculture water-stress follow-up. The proposed system keeps a tile-level knowledge ledger, scores event priority and evidence quality, then decides whether each candidate land tile should be sent as a priority image chip, compressed into a feature summary, or deferred during a constrained contact. The submission is prepared by Cody Mitchell as an independent researcher affiliated with Fractal Research Group / SoilPulse-ET. The Phase 1 artifact is a reproducible concept and policy demonstrator: it expresses the triage logic, evidence ledger, and resource accounting in software that reviewers can run, inspect, and extend during future validation work.
 
 == B. Condensed summary of how the solution addresses all 5 Judge Criteria concepts.
 
@@ -102,7 +102,7 @@ SoilPulse-ET supports water-stress triage for regenerative agriculture and relat
 
 == B. Problem statement for the solution.
 
-Land managers and SmallSats both face scarcity. On the ground, field teams have limited attention and must decide which water-stress signals deserve follow-up. In orbit, SmallSats have limited power, compute, storage, contact time, and downlink. The problem is not simply observing more land; it is deciding what is worth processing and returning first under constrained mission resources.
+Land managers and SmallSats both face scarcity. On the ground, field teams have limited attention and must decide which water-stress signals deserve follow-up. In orbit, SmallSats have limited power, compute, storage, contact time, and downlink. The core problem is deciding what is worth processing and returning first under constrained mission resources.
 
 == I. Selected land use algorithm(s) and small satellite technical requirements.
 
@@ -115,10 +115,10 @@ The first NASA data anchor is ECOSTRESS L3T JET V002. ECOSTRESS supports evapotr
   stroke: table_style.stroke,
   fill: table_style.fill,
   [Constraint], [SoilPulse-ET design response],
-  [Downlink], [Do not send every full chip. Select priority chips, send summaries, and defer low-value tiles.],
+  [Downlink], [Select priority chips, send summaries, and defer low-value tiles instead of returning every full chip.],
   [Compute], [Use compact per-tile features and a deterministic policy before downlink.],
   [Energy], [Track per-tile processing and packet costs under a mission budget.],
-  [Storage], [Keep a tile-level ledger and return compact evidence when full imagery is not justified.],
+  [Storage], [Keep a tile-level ledger and return compact evidence when a summary is sufficient.],
   [Contact time], [Prioritize packets that create the highest-value analyst worklist.],
 )
 
@@ -136,7 +136,7 @@ The benefit is selective attention. SoilPulse-ET is designed to reduce wasted do
 
 == I. How this solution builds upon current research and market capabilities.
 
-The project builds on NASA evapotranspiration data, operational interest in satellite-driven agriculture monitoring, and market examples such as ET-informed water budgets and district-scale analytics. Its contribution is not a new agronomic truth claim. It is a systems layer that asks how a SmallSat can decide what to sense, summarize, downlink, or defer before data reaches the ground.
+The project builds on NASA evapotranspiration data, operational interest in satellite-driven agriculture monitoring, and market examples such as ET-informed water budgets and district-scale analytics. Its contribution is a systems layer that asks how a SmallSat can decide what to sense, summarize, downlink, or defer before data reaches the ground.
 
 == II. Effect on technical variables compared to traditional methods.
 
@@ -152,11 +152,11 @@ The project builds on NASA evapotranspiration data, operational interest in sate
   [Energy/processing], [38.10% / 48.00%], [The policy stays within concept planning budgets.],
 )
 
-#callout([The 71.43% savings is byte savings, not the percentage of tiles deferred. Four of eight tiles are deferred, but two selected tiles are compact summaries rather than full chips.])
+#callout([The 71.43% metric is byte savings. Four of eight tiles are deferred, and two selected tiles use compact summaries, which reduces bytes beyond the tile-count reduction alone.])
 
 == III. Concrete examples, outperformance scenarios, and limitations.
 
-Example scenario: after a hot and dry week, an irrigation district analyst may need to compare cover-cropped orchards, deficit-irrigated vineyards, rotational pastures, riparian buffers, and managed fallow trials. A traditional full-return workflow can spend downlink on every candidate. SoilPulse-ET instead returns detailed chips for urgent tiles, compact summaries for useful but lower-cost evidence, and defers cloudy or low-confidence tiles. The limitation is explicit: the current hybrid fixture contains one ECOSTRESS-derived knowledge-gap row plus labeled synthetic mission-scenario rows. It demonstrates policy behavior and resource accounting, not field-validated crop stress or flight readiness.
+Example scenario: after a hot and dry week, an irrigation district analyst may need to compare cover-cropped orchards, deficit-irrigated vineyards, rotational pastures, riparian buffers, and managed fallow trials. A traditional full-return workflow can spend downlink on every candidate. SoilPulse-ET instead returns detailed chips for urgent tiles, compact summaries for useful but lower-cost evidence, and defers cloudy or low-confidence tiles. The evidence scope is explicit: the current hybrid fixture contains one ECOSTRESS-derived knowledge-gap row plus labeled synthetic mission-scenario rows. It demonstrates Phase 1 policy behavior and resource accounting, with field validation and flight-readiness testing defined as next-phase work.
 
 #pagebreak()
 
@@ -164,7 +164,7 @@ Example scenario: after a hot and dry week, an irrigation district analyst may n
 
 == A. Qualifications and expertise of team members.
 
-Cody Mitchell is submitting as an independent researcher affiliated with Fractal Research Group / SoilPulse-ET. The Phase 1 contribution is software systems design, reproducible artifact packaging, and evidence-bounded research operations. This submission does not claim flight qualification, agronomic validation, or NASA approval.
+Cody Mitchell is submitting as an independent researcher affiliated with Fractal Research Group / SoilPulse-ET. The Phase 1 contribution is software systems design, reproducible artifact packaging, and evidence-bounded research operations. The documented evidence supports transparent resource-aware triage, public review of the artifact, and a clear path toward formal flight qualification, agronomic validation, and future NASA review.
 
 == B. Past projects or research relevant to the proposed solution.
 
@@ -180,7 +180,7 @@ Potential users include irrigation district analysts, groundwater sustainability
 
 == II. Potential market applications beyond agricultural or forestry purposes.
 
-The same chip / summary / defer pattern can transfer to forestry drought stress, restoration monitoring, post-fire recovery, riparian-buffer monitoring, wetland resilience, and water-resource risk analytics. The common market need is not only imagery access; it is prioritized evidence under constrained observation and response capacity.
+The same chip / summary / defer pattern can transfer to forestry drought stress, restoration monitoring, post-fire recovery, riparian-buffer monitoring, wetland resilience, and water-resource risk analytics. The common market need is prioritized evidence under constrained observation and response capacity.
 
 #pagebreak()
 
@@ -200,7 +200,7 @@ This process addresses the industry gap between abundant Earth-observation data 
 
 == B. Next steps if selected as a Finalist.
 
-If selected, the next phase is validation and mission hardening. SoilPulse-ET would test the policy against more real windows, record ambiguous and failed cases, tune thresholds against actual user priorities, and map the concept onto a specific 6U compute, power, thermal, storage, and downlink stack. The finalist target is not to claim flight readiness; it is to become a better-validated mission prototype.
+If selected, the next phase is validation and mission hardening. SoilPulse-ET would test the policy against more real windows, record ambiguous and failed cases, tune thresholds against actual user priorities, and map the concept onto a specific 6U compute, power, thermal, storage, and downlink stack. The finalist target is a better-validated mission prototype with documented evidence around resource budgets, user thresholds, and hardware assumptions.
 
 = 6. Conclusion
 
@@ -210,7 +210,7 @@ SoilPulse-ET gives a SmallSat a transparent way to prioritize scarce observation
 
 == B. Summarize strengths and potential impact.
 
-The strength of SoilPulse-ET is disciplined selectivity. The current hybrid demo shows meaningful downlink savings while preserving high-stress candidates and deferring cloudy evidence. For regenerative agriculture and water-stress follow-up, this can help missions manage scarce satellite resources so land managers can respond faster to scarce water. The submission remains honest about its boundary: concept and policy demonstrator today; validation and mission hardening next.
+The strength of SoilPulse-ET is disciplined selectivity. The current hybrid demo shows meaningful downlink savings while preserving high-stress candidates and deferring cloudy evidence. For regenerative agriculture and water-stress follow-up, this can help missions manage scarce satellite resources so land managers can respond faster to scarce water. The current artifact is a concept and policy demonstrator today, with validation and mission hardening defined as the next phase.
 
 #pagebreak()
 
