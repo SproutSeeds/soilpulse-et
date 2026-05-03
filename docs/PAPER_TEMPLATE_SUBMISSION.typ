@@ -65,6 +65,10 @@
   #info_row("NASA Data Set Used", "ECOSTRESS Tiled Evapotranspiration Instantaneous and Daytime L3 Global 70 m V002")
 
   #info_row("DOI", "10.5067/ECOSTRESS/ECO_L3T_JET.002")
+
+  #info_row("Public Artifact Repository", "https://github.com/SproutSeeds/soilpulse-et")
+
+  #info_row("Paper in Repository", "docs/PAPER_FINAL_CANDIDATE.pdf")
 ]
 
 #v(0.08in)
