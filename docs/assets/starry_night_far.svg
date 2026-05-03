@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs>
+    <radialGradient id="skyGlow" cx="50%" cy="45%" r="80%">
+      <stop offset="0%" stop-color="#17233b"/>
+      <stop offset="46%" stop-color="#0b1426"/>
+      <stop offset="100%" stop-color="#030711"/>
+    </radialGradient>
+    <radialGradient id="horizonGlow" cx="50%" cy="100%" r="70%">
+      <stop offset="0%" stop-color="#15314a" stop-opacity="0.50"/>
+      <stop offset="45%" stop-color="#0b1729" stop-opacity="0.24"/>
+      <stop offset="100%" stop-color="#020611" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="milkyBand" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset="35%" stop-color="#c7d2fe" stop-opacity="0.045"/>
+      <stop offset="55%" stop-color="#dbeafe" stop-opacity="0.075"/>
+      <stop offset="75%" stop-color="#ffffff" stop-opacity="0.035"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="softBlur">
+      <feGaussianBlur stdDeviation="9"/>
+    </filter>
+    <g id="smallStar">
+      <circle cx="0" cy="0" r="1.05" fill="#f8fafc"/>
+    </g>
+    <g id="dimStar">
+      <circle cx="0" cy="0" r="0.65" fill="#cbd5e1"/>
+    </g>
+    <g id="brightStar">
+      <circle cx="0" cy="0" r="1.55" fill="#ffffff"/>
+      <circle cx="0" cy="0" r="4.5" fill="#ffffff" opacity="0.10"/>
+    </g>
+  </defs>
+  <rect width="1600" height="900" fill="url(#skyGlow)"/>
+  <rect width="1600" height="900" fill="url(#horizonGlow)"/>
+  <ellipse cx="850" cy="460" rx="850" ry="130" fill="url(#milkyBand)" opacity="0.9" transform="rotate(-18 850 460)" filter="url(#softBlur)"/>
+  <g opacity="0.26">
+    <circle cx="250" cy="735" r="220" fill="#38bdf8" opacity="0.08" filter="url(#softBlur)"/>
+    <circle cx="1310" cy="690" r="260" fill="#818cf8" opacity="0.07" filter="url(#softBlur)"/>
+  </g>
+  <g opacity="0.90">
+    <use href="#brightStar" x="142" y="118"/>
+    <use href="#smallStar" x="210" y="242"/>
+    <use href="#dimStar" x="286" y="168"/>
+    <use href="#smallStar" x="348" y="330"/>
+    <use href="#dimStar" x="404" y="104"/>
+    <use href="#brightStar" x="495" y="218"/>
+    <use href="#dimStar" x="545" y="392"/>
+    <use href="#smallStar" x="612" y="146"/>
+    <use href="#dimStar" x="686" y="292"/>
+    <use href="#smallStar" x="752" y="94"/>
+    <use href="#brightStar" x="840" y="250"/>
+    <use href="#dimStar" x="910" y="156"/>
+    <use href="#smallStar" x="986" y="342"/>
+    <use href="#dimStar" x="1052" y="112"/>
+    <use href="#brightStar" x="1135" y="224"/>
+    <use href="#smallStar" x="1214" y="86"/>
+    <use href="#dimStar" x="1288" y="310"/>
+    <use href="#smallStar" x="1376" y="154"/>
+    <use href="#brightStar" x="1484" y="274"/>
+  </g>
+  <g opacity="0.70">
+    <use href="#dimStar" x="108" y="408"/>
+    <use href="#smallStar" x="188" y="545"/>
+    <use href="#dimStar" x="318" y="486"/>
+    <use href="#smallStar" x="446" y="560"/>
+    <use href="#dimStar" x="572" y="500"/>
+    <use href="#smallStar" x="700" y="614"/>
+    <use href="#dimStar" x="814" y="470"/>
+    <use href="#smallStar" x="938" y="594"/>
+    <use href="#dimStar" x="1070" y="512"/>
+    <use href="#smallStar" x="1196" y="642"/>
+    <use href="#dimStar" x="1326" y="468"/>
+    <use href="#smallStar" x="1452" y="586"/>
+  </g>
+  <g opacity="0.55">
+    <use href="#dimStar" x="72" y="72"/>
+    <use href="#dimStar" x="166" y="690"/>
+    <use href="#dimStar" x="260" y="78"/>
+    <use href="#dimStar" x="378" y="710"/>
+    <use href="#dimStar" x="470" y="44"/>
+    <use href="#dimStar" x="640" y="728"/>
+    <use href="#dimStar" x="806" y="52"/>
+    <use href="#dimStar" x="972" y="714"/>
+    <use href="#dimStar" x="1106" y="58"/>
+    <use href="#dimStar" x="1266" y="734"/>
+    <use href="#dimStar" x="1410" y="48"/>
+    <use href="#dimStar" x="1532" y="706"/>
+  </g>
+</svg>

@@ -4,18 +4,17 @@ SoilPulse-ET is a NASA Space to Soil Challenge Phase 1 software artifact for a
 SmallSat onboard triage concept supporting regenerative-agriculture
 water-stress follow-up.
 
-The core idea is resource discipline: a compact satellite should not treat
-every candidate land tile as equally urgent. SoilPulse-ET scores candidate
-tiles, tracks event priority and evidence quality, then chooses one of three
-packet actions:
+The core idea is resource discipline under a limited satellite contact window.
+SoilPulse-ET scores candidate tiles, tracks event priority and evidence
+quality, then chooses one of three packet actions:
 
 - `priority_chip`: send a higher-detail observation chip
 - `feature_summary`: send compact statistics and metadata
 - `defer`: send nothing for this contact
 
-The current artifact is a transparent policy demonstrator. It is not flight
-software, not a validated crop-stress model, and not an autonomous irrigation
-control system.
+The current artifact is a transparent policy demonstrator. It includes runnable
+policy code, demo fixtures, tests, budget metrics, paper documentation, and the
+video slide deck used for the Phase 1 pitch.
 
 ## NASA Data Anchor
 
@@ -36,6 +35,16 @@ The Phase 1 paper is included here:
 
 ```text
 docs/PAPER_FINAL_CANDIDATE.pdf
+```
+
+## Video Slide Deck
+
+The slide deck used for the submitted pitch video is included here:
+
+```text
+docs/VIDEO_SLIDE_DECK.pdf
+docs/VIDEO_SLIDE_DECK.typ
+docs/assets/starry_night_far.svg
 ```
 
 Supporting docs:
@@ -93,6 +102,6 @@ EARTHDATA_USERNAME='YOUR_USERNAME' EARTHDATA_PASSWORD='YOUR_PASSWORD' make appee
 ## Repository Scope
 
 This repository is the public-facing challenge artifact. It contains the
-runnable policy demo, tests, selected documentation, and the final Phase 1
-paper. Lab notes, private process files, local submission videos, raw data, and
-credentials are intentionally excluded.
+runnable policy demo, tests, selected documentation, final Phase 1 paper, and
+video slide deck. Lab notes, private process files, local submission videos,
+raw data, and credentials are intentionally excluded.
