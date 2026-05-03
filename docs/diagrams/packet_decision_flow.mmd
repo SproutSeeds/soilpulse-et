@@ -1,0 +1,24 @@
+flowchart TD
+  candidate[Candidate tile features]
+  cloud{Cloud fraction high?}
+  score[Compute stress score]
+  threshold{Score above summary threshold?}
+  chip{Score above chip threshold?}
+  fits_chip{Chip fits resources?}
+  fits_summary{Summary fits resources?}
+  priority[Downlink priority chip]
+  summary[Downlink feature summary]
+  defer[Defer for this contact]
+
+  candidate --> cloud
+  cloud -->|yes| defer
+  cloud -->|no| score
+  score --> threshold
+  threshold -->|no| defer
+  threshold -->|yes| chip
+  chip -->|yes| fits_chip
+  chip -->|no| fits_summary
+  fits_chip -->|yes| priority
+  fits_chip -->|no| fits_summary
+  fits_summary -->|yes| summary
+  fits_summary -->|no| defer

@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-label="SoilPulse-ET downlink optimization chart">
+<rect width="1600" height="900" fill="#f8fafc"/>
+<text x="72" y="78" font-family="Arial, sans-serif" font-size="42" font-weight="700" fill="#111827">SoilPulse-ET optimizes scarce downlink</text>
+<text x="72" y="122" font-family="Arial, sans-serif" font-size="24" fill="#4b5563">Hybrid demo: one ECOSTRESS-derived knowledge-gap row plus labeled mission-scenario rows</text>
+
+<rect x="72" y="170" width="900" height="410" rx="18" fill="#ffffff" stroke="#d1d5db"/>
+<text x="112" y="226" font-family="Arial, sans-serif" font-size="30" font-weight="700" fill="#111827">Downlink used per contact</text>
+
+<text x="112" y="296" font-family="Arial, sans-serif" font-size="24" fill="#374151">Full-chip baseline</text>
+<rect x="112" y="316" width="760.0" height="58" rx="10" fill="#dbeafe"/>
+<rect x="112" y="316" width="760.0" height="58" rx="10" fill="#2563eb"/>
+<text x="898" y="354" text-anchor="end" font-family="Arial, sans-serif" font-size="26" font-weight="700" fill="#ffffff">784 KiB</text>
+
+<text x="112" y="430" font-family="Arial, sans-serif" font-size="24" fill="#374151">SoilPulse-ET selected packets</text>
+<rect x="112" y="450" width="760.0" height="58" rx="10" fill="#e5e7eb"/>
+<rect x="112" y="450" width="217.1" height="58" rx="10" fill="#059669"/>
+<rect x="329.1" y="450" width="542.9" height="58" fill="#a7f3d0"/>
+<text x="311.1" y="488" text-anchor="end" font-family="Arial, sans-serif" font-size="26" font-weight="700" fill="#ffffff">224 KiB</text>
+<text x="898" y="488" text-anchor="end" font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="#065f46">saved 560 KiB / 71.43%</text>
+
+<rect x="1020" y="170" width="508" height="410" rx="18" fill="#ffffff" stroke="#d1d5db"/>
+<text x="1060" y="226" font-family="Arial, sans-serif" font-size="30" font-weight="700" fill="#111827">What survived the triage?</text>
+
+<rect x="1060" y="270" width="190" height="92" rx="14" fill="#f9fafb" stroke="#e5e7eb"/>
+<text x="1080" y="305" font-family="Arial, sans-serif" font-size="18" fill="#4b5563">Selected packets</text>
+<text x="1080" y="343" font-family="Arial, sans-serif" font-size="38" font-weight="700" fill="#2563eb">4</text>
+
+
+<rect x="1298" y="270" width="190" height="92" rx="14" fill="#f9fafb" stroke="#e5e7eb"/>
+<text x="1318" y="305" font-family="Arial, sans-serif" font-size="18" fill="#4b5563">Deferred tiles</text>
+<text x="1318" y="343" font-family="Arial, sans-serif" font-size="38" font-weight="700" fill="#6b7280">4</text>
+
+
+<rect x="1060" y="398" width="190" height="92" rx="14" fill="#f9fafb" stroke="#e5e7eb"/>
+<text x="1080" y="433" font-family="Arial, sans-serif" font-size="18" fill="#4b5563">High-stress retained</text>
+<text x="1080" y="471" font-family="Arial, sans-serif" font-size="38" font-weight="700" fill="#059669">2/2</text>
+
+
+<rect x="1298" y="398" width="190" height="92" rx="14" fill="#f9fafb" stroke="#e5e7eb"/>
+<text x="1318" y="433" font-family="Arial, sans-serif" font-size="18" fill="#4b5563">Cloudy deferred</text>
+<text x="1318" y="471" font-family="Arial, sans-serif" font-size="38" font-weight="700" fill="#b45309">1/1</text>
+
+
+<rect x="72" y="626" width="1456" height="190" rx="18" fill="#ffffff" stroke="#d1d5db"/>
+<text x="112" y="680" font-family="Arial, sans-serif" font-size="30" font-weight="700" fill="#111827">Budget sensitivity: high-stress retention stays at 100%</text>
+<line x1="180" y1="766" x2="810" y2="766" stroke="#d1d5db" stroke-width="3"/>
+<polyline points="240.0,698.2 480.0,711.1 720.0,725.0" fill="none" stroke="#2563eb" stroke-width="5"/>
+<circle cx="240.0" cy="698.2" r="7" fill="#2563eb"/>
+<circle cx="480.0" cy="711.1" r="7" fill="#2563eb"/>
+<circle cx="720.0" cy="725.0" r="7" fill="#2563eb"/>
+<text x="240.0" y="680.2" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#111827">96.94% saved</text><text x="240.0" y="805" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#4b5563">64 KiB budget</text>
+<text x="480.0" y="693.1" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#111827">84.69% saved</text><text x="480.0" y="805" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#4b5563">128 KiB budget</text>
+<text x="720.0" y="707.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#111827">71.43% saved</text><text x="720.0" y="805" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#4b5563">384 KiB budget</text>
+<text x="930" y="716" font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="#111827">Next optimization path</text>
+<text x="930" y="754" font-family="Arial, sans-serif" font-size="22" fill="#374151">Replace synthetic HLS + terrain fixtures with real ingestion, then tune</text>
+<text x="930" y="786" font-family="Arial, sans-serif" font-size="22" fill="#374151">chip/summary thresholds against user priorities and field feedback.</text>
+
+<text x="72" y="864" font-family="Arial, sans-serif" font-size="18" fill="#6b7280">Generated from tests/fixtures/candidate_tiles.hybrid.csv via scripts/build_video_charts.py. This is a policy demonstrator, not flight software or crop-stress validation.</text>
+</svg>

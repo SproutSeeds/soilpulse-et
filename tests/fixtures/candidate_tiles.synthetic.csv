@@ -1,0 +1,8 @@
+tile_id,land_use,acres,et_anomaly_mm_day,vegetation_index_delta,cloud_fraction,days_since_seen,user_priority,confidence,full_chip_kib,summary_kib,processing_ms,energy_j
+cv-covercrop-013,cover-cropped almond block,38,-3.3,-0.14,0.08,9,0.95,0.86,96,8,180,4
+cv-pasture-021,rotational pasture,54,-2.2,-0.18,0.12,5,0.70,0.78,96,8,180,4
+cv-orchard-044,young orchard windbreak,24,-1.6,-0.04,0.18,12,0.88,0.71,96,8,180,4
+cv-rangeland-008,restoration rangeland,120,-0.4,0.02,0.04,14,0.42,0.67,96,8,180,4
+cv-riparian-016,riparian buffer,17,-2.7,-0.11,0.72,7,0.90,0.62,96,8,180,4
+cv-fallow-003,managed fallow soil-cover trial,80,0.3,0.01,0.03,2,0.25,0.75,96,8,180,4
+cv-vineyard-032,deficit-irrigated vineyard,44,-3.8,-0.10,0.16,10,0.82,0.84,112,8,180,4

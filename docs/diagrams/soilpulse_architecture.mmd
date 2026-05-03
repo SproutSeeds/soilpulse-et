@@ -1,0 +1,26 @@
+flowchart LR
+  user[User priorities and field history]
+  planner[Observation planner]
+  queue[Onboard sensor task queue]
+  sensor[Candidate land tile acquisition]
+  features[Onboard feature extractor]
+  policy[Triage policy]
+  packets[Bounded packet queue]
+  downlink[Downlink manager]
+  ground[Ground calibrator]
+  delivery[User worklist or alert]
+  ecostress[ECOSTRESS calibration context]
+
+  user --> planner
+  planner --> queue
+  queue --> sensor
+  sensor --> features
+  features --> policy
+  policy -->|priority_chip| packets
+  policy -->|feature_summary| packets
+  policy -->|defer| queue
+  packets --> downlink
+  downlink --> ground
+  ecostress --> ground
+  ground --> delivery
+  ground --> planner

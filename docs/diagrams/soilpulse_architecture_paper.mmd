@@ -1,0 +1,16 @@
+flowchart TB
+  user[User priorities and field history]
+  planner[Observation planner]
+  features[Onboard feature extractor]
+  policy[Triage policy]
+  packets[Priority chips and feature summaries]
+  ground[Ground calibration with ECOSTRESS context]
+  delivery[User worklist or alert]
+
+  user --> planner
+  planner --> features
+  features --> policy
+  policy --> packets
+  packets --> ground
+  ground --> delivery
+  ground --> planner
