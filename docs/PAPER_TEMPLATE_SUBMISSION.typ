@@ -3,8 +3,8 @@
   margin: 1in,
   footer: context align(right)[#counter(page).display()],
 )
-#set text(font: "Arial", size: 11pt)
-#set par(justify: false, leading: 0.57em, spacing: 0.42em)
+#set text(font: "Arial", size: 10.7pt)
+#set par(justify: false, leading: 0.72em, spacing: 0.46em)
 #set heading(numbering: none)
 #let navy = rgb("#1f4e79")
 #let gold = rgb("#c58a00")
@@ -13,15 +13,16 @@
 
 #show heading.where(level: 1): it => {
   set text(size: 13.5pt, weight: "bold", fill: navy)
-  block(above: 0.18in, below: 0.08in)[
+  block(above: 0.18in, below: 0.1in)[
     #it
     #v(2pt)
     #line(length: 100%, stroke: (paint: gold, thickness: 0.8pt))
   ]
 }
 #show heading.where(level: 2): it => {
-  set text(size: 11pt, weight: "bold", fill: navy)
-  block(above: 0.08in, below: 0.02in)[#it]
+  set text(size: 10.8pt, weight: "bold", fill: navy)
+  set par(leading: 0.88em)
+  block(above: 0.095in, below: 0.075in)[#it]
 }
 
 #let field(label, value) = [
@@ -43,7 +44,10 @@
   fill: soft,
   stroke: (paint: navy, thickness: 0.6pt),
   radius: 3pt,
-)[#body]
+)[
+  #set par(leading: 0.74em)
+  #body
+]
 
 #align(center)[
   #text(size: 17pt, weight: "bold", fill: navy)[SoilPulse-ET]
@@ -56,6 +60,7 @@
 #v(0.13in)
 
 #box(width: 100%, inset: 9pt, fill: soft, stroke: (paint: navy, thickness: 0.7pt), radius: 3pt)[
+  #set par(leading: 0.78em, spacing: 0.34em)
   #text(size: 11.5pt, weight: "bold", fill: navy)[Participant Information]
   #v(4pt)
   #info_row("Participant Name", "Cody Mitchell")
