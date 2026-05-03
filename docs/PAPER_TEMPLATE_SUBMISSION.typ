@@ -210,7 +210,7 @@ SoilPulse-ET gives a SmallSat a transparent way to choose which candidate tiles 
 
 == B. Summarize strengths and potential impact.
 
-The strength of SoilPulse-ET is that each tile decision has an action, reason code, packet-size estimate, and budget impact. The current hybrid demo shows meaningful downlink savings while preserving high-stress candidates and deferring cloudy evidence. For regenerative agriculture and water-stress follow-up, this can help missions manage limited satellite resources so land managers can respond faster to scarce water. The current artifact is a concept and policy demonstrator today, with validation and mission hardening defined as the next phase.
+The strength of SoilPulse-ET is that each tile decision has an action, reason code, packet-size estimate, and budget impact. The current hybrid demo shows meaningful downlink savings while preserving high-stress candidates and deferring cloudy evidence. For regenerative agriculture and water-stress follow-up, this can help missions manage limited satellite resources so land managers can respond faster to scarce water. The Phase 1 package includes runnable policy code, fixture rows, tests, budget metrics, and paper documentation; the next phase adds more real-data windows, user-calibrated thresholds, and a specific 6U compute, power, thermal, storage, and downlink model.
 
 #pagebreak()
 
