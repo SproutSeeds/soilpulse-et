@@ -37,6 +37,14 @@ The Phase 1 paper is included here:
 docs/PAPER_FINAL_CANDIDATE.pdf
 ```
 
+## Pitch Video
+
+The submitted pitch video is available here:
+
+```text
+https://www.youtube.com/watch?v=6RrxAeW47VE
+```
+
 ## Video Slide Deck
 
 The slide deck used for the submitted pitch video is included here:

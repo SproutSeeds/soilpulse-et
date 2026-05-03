@@ -33,6 +33,13 @@
   #text(weight: "bold", fill: navy)[#label:] #value
 ]
 
+#let access_row(label, target, display: none) = {
+  let shown = if display == none { target } else { display }
+  [
+    #text(weight: "bold", fill: navy)[#label:] #link(target)[#shown]
+  ]
+}
+
 #let table_style = (
   stroke: (x, y) => if y == 0 { (paint: navy, thickness: 0.8pt) } else { (paint: line_gray, thickness: 0.45pt) },
   fill: (x, y) => if y == 0 { soft } else { none },
@@ -61,7 +68,7 @@
 
 #box(width: 100%, inset: 9pt, fill: soft, stroke: (paint: navy, thickness: 0.7pt), radius: 3pt)[
   #set par(leading: 0.78em, spacing: 0.34em)
-  #text(size: 11.5pt, weight: "bold", fill: navy)[Participant Information]
+  #text(size: 11.5pt, weight: "bold", fill: navy)[Participant Information and Project Access]
   #v(4pt)
   #info_row("Participant Name", "Cody Mitchell")
 
@@ -71,9 +78,21 @@
 
   #info_row("DOI", "10.5067/ECOSTRESS/ECO_L3T_JET.002")
 
-  #info_row("Public Artifact Repository", "https://github.com/SproutSeeds/soilpulse-et")
+  #access_row("Public Artifact Repository", "https://github.com/SproutSeeds/soilpulse-et")
 
-  #info_row("Paper in Repository", "docs/PAPER_FINAL_CANDIDATE.pdf")
+  #access_row("Software Package", "https://github.com/SproutSeeds/soilpulse-et/tree/main/src/nasa_space_to_soil_challenge", display: "src/nasa_space_to_soil_challenge")
+
+  #access_row("Onboard Triage Module", "https://github.com/SproutSeeds/soilpulse-et/blob/main/src/nasa_space_to_soil_challenge/onboard_triage.py", display: "src/nasa_space_to_soil_challenge/onboard_triage.py")
+
+  #access_row("Demo Runner", "https://github.com/SproutSeeds/soilpulse-et/blob/main/scripts/run_onboard_triage_demo.py", display: "scripts/run_onboard_triage_demo.py")
+
+  #access_row("Tests and Fixtures", "https://github.com/SproutSeeds/soilpulse-et/tree/main/tests", display: "tests/")
+
+  #access_row("Paper in Repository", "https://github.com/SproutSeeds/soilpulse-et/blob/main/docs/PAPER_FINAL_CANDIDATE.pdf", display: "docs/PAPER_FINAL_CANDIDATE.pdf")
+
+  #access_row("Video Slide Deck", "https://github.com/SproutSeeds/soilpulse-et/blob/main/docs/VIDEO_SLIDE_DECK.pdf", display: "docs/VIDEO_SLIDE_DECK.pdf")
+
+  #access_row("Pitch Video", "https://www.youtube.com/watch?v=6RrxAeW47VE", display: "youtube.com/watch?v=6RrxAeW47VE")
 ]
 
 #v(0.08in)
