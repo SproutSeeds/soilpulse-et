@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="docs/assets/soilpulse-readme-hero.svg" alt="Original 2D animation of a SoilPulse-ET satellite scanning changing target footprints on an Earth-like planet and collecting data packets." width="100%">
+</p>
+
 # SoilPulse-ET
 
 SoilPulse-ET is a NASA Space to Soil Challenge Phase 1 software artifact for a
